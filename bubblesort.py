@@ -1,4 +1,5 @@
-
+# General Complexity of Bubble Sort is O(n^2) however best case complexity can be reduced by terminating outer loop
+# if there is no swap in inner loop.
 def sort(a):
     n = len(a)
     swapped = False
@@ -9,7 +10,6 @@ def sort(a):
                 swapped = True
         if not swapped:
             break
-        print a
 
 a = [64, 34, 25, 12, 22, 11, 2]
 sort(a)
