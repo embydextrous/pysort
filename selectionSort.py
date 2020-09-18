@@ -1,4 +1,5 @@
-# Select minimum element
+# Select minimum element and swap it with current element.
+# Best, Worst and Average - O(n^2)
 def sort(a):
     n = len(a)
     for i in range(n-1):
