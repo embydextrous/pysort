@@ -12,7 +12,6 @@ def quickSort(a, l, r):
         quickSort(a, pivot + 1, r)
 
 def partition(a, l, r):
-    i = l - 1    
     i, j = l + 1, r
     while i < j:
         while i <= r and a[i] <= a[l]:
