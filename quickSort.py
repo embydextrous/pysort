@@ -33,7 +33,7 @@ def partition2(a, l, r):
     a[i+1], a[r] = a[r], a[i+1]
     return i+1
 
-a = [1, 2, 2, 3, 2, 1, 0, 3, 2, 1]
+a = [1, 2, 2, 3, 2, 1, 0, 1, 1]
 quickSort(a, 0, len(a) - 1)
 print a
 
