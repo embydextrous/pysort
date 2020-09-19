@@ -1,3 +1,4 @@
+# Time complexity of Heap Sort is O(nLogn) in all 3 cases (worst, average and best).
 def buildMaxHeap(a):
     n = len(a)
     for i in range(n/2-1, -1, -1):
