@@ -11,6 +11,18 @@ def sort(a):
         if not swapped:
             break
 
+def recursiveBubbleSort(a, l, r):
+    n = (r - l) + 1
+    if n > 1:
+        isSwapped = False
+        for i in range(l, r):
+            if a[i] > a[i+1]:
+                a[i], a[i+1] = a[i+1], a[i]
+                isSwapped = True
+        if isSwapped:
+            recursiveBubbleSort(a, l, r - 1)
+
+
 a = [64, 34, 25, 12, 22, 11, 2]
-sort(a)
+recursiveBubbleSort(a, 0, len(a) - 1)
 print a
