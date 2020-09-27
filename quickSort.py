@@ -5,6 +5,9 @@
 # However, if we pick middle element as pivot, it becomes best case as pivot is always median element.
 # T(n) = 2T(n/2) + O(n) --> O(nlogn)
 
+import time
+import random
+
 def quickSort(a, l, r):
     if l < r:
         pivot = partition(a, l, r)
@@ -13,6 +16,8 @@ def quickSort(a, l, r):
 
 # Hoare's Partition - Difficult to Implement
 def partition(a, l, r):
+    x = random.randrange(1, 50000) % (r - l)
+    a[l], a[l+x] = a[l+x], a[l]
     i, j = l + 1, r
     while i <= j:
         while i <= j and a[i] <= a[l]:
@@ -26,10 +31,12 @@ def partition(a, l, r):
 
 # Lomuto's Partition - Easy to Implement
 def partition2(a, l, r):
+    x = random.randrange(1, 50000) % (r - l)
+    a[r], a[l + x] = a[l + x], a[r]
     pivot = a[r]
     i = l - 1
     for j in range(l, r):
-        if a[j] < pivot:
+        if a[j] <= pivot:
             i += 1
             a[i], a[j] = a[j], a[i]
     a[i+1], a[r] = a[r], a[i+1]
@@ -37,8 +44,13 @@ def partition2(a, l, r):
 
 # Please refer this - https://cs.stackexchange.com/a/11550
 
-a = [1, 2, 2, 3, 2, 1, 0, 1, 1]
+a = []
+for i in range(50000):
+    a.append(i)
+start = time.time() * 1000
 quickSort(a, 0, len(a) - 1)
-print a
+end = time.time() * 1000
+print end - start
+#print a
 
         
