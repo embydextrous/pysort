@@ -4,7 +4,7 @@ def sort(a):
     n = len(a)
     for i in range(n-1):
         minIndex = i
-        for j in range(i, n):
+        for j in range(i + 1, n):
             if a[j] < a[minIndex]:
                 minIndex = j
         a[minIndex], a[i] = a[i], a[minIndex]
