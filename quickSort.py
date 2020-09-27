@@ -11,6 +11,7 @@ def quickSort(a, l, r):
         quickSort(a, l, pivot - 1)
         quickSort(a, pivot + 1, r)
 
+# Hoare's Partition - Difficult to Implement
 def partition(a, l, r):
     i, j = l + 1, r
     while i <= j:
@@ -23,6 +24,7 @@ def partition(a, l, r):
     a[l], a[j] = a[j], a[l]
     return j
 
+# Lomuto's Partition - Easy to Implement
 def partition2(a, l, r):
     pivot = a[r]
     i = l - 1
@@ -32,6 +34,8 @@ def partition2(a, l, r):
             a[i], a[j] = a[j], a[i]
     a[i+1], a[r] = a[r], a[i+1]
     return i+1
+
+# Please refer this - https://cs.stackexchange.com/a/11550
 
 a = [1, 2, 2, 3, 2, 1, 0, 1, 1]
 quickSort(a, 0, len(a) - 1)
