@@ -16,8 +16,8 @@ def quickSort(a, l, r):
 
 # Hoare's Partition - Difficult to Implement
 def partition(a, l, r):
-    #x = random.randrange(1, 50000) % (r - l)
-    #a[l], a[l+x] = a[l+x], a[l]
+    x = random.randrange(1, 50000) % (r - l)
+    a[l], a[l+x] = a[l+x], a[l]
     i, j = l + 1, r
     while i <= j:
         while i <= j and a[i] < a[l]:
@@ -41,11 +41,12 @@ def partition2(a, l, r):
             i += 1
             a[i], a[j] = a[j], a[i]
     a[i+1], a[r] = a[r], a[i+1]
+    print a
     return i+1
 
 # Please refer this - https://cs.stackexchange.com/a/11550
 
-a = [14, 6, 8, 1, 4, 9, 2, 1, 7, 10, 5]
+a = [6, 5, 6, 1, 2, 4, 8, 3, 1, 7, 6, 9]
 
 start = time.time() * 1000
 quickSort(a, 0, len(a) - 1)
