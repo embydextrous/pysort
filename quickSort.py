@@ -16,17 +16,18 @@ def quickSort(a, l, r):
 
 # Hoare's Partition - Difficult to Implement
 def partition(a, l, r):
-    x = random.randrange(1, 50000) % (r - l)
-    a[l], a[l+x] = a[l+x], a[l]
+    #x = random.randrange(1, 50000) % (r - l)
+    #a[l], a[l+x] = a[l+x], a[l]
     i, j = l + 1, r
     while i <= j:
-        while i <= j and a[i] <= a[l]:
+        while i <= j and a[i] < a[l]:
             i += 1
         while i <= j and a[j] >= a[l]:
             j -= 1
         if i < j:
             a[i], a[j] = a[j], a[i]
     a[l], a[j] = a[j], a[l]
+    print a
     return j
 
 # Lomuto's Partition - Easy to Implement
@@ -44,13 +45,12 @@ def partition2(a, l, r):
 
 # Please refer this - https://cs.stackexchange.com/a/11550
 
-a = []
-for i in range(50000):
-    a.append(i)
+a = [14, 6, 8, 1, 4, 9, 2, 1, 7, 10, 5]
+
 start = time.time() * 1000
 quickSort(a, 0, len(a) - 1)
 end = time.time() * 1000
 print end - start
-#print a
+print a
 
         
